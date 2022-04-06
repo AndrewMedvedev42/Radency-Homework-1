@@ -29,10 +29,7 @@ function createNoteElement({id, name, createdAt, category, text_content, datesMe
             <th>${datesMentioned.join(', ')}</th>
             <th>${completed ? "Completed" : "In progress"}</th>
             <th>
-                <a href="./editForm.html?id=${id}"><button>Edit</button></a>
-            </th>
-            <th>
-                <button id="${id}archive-button">Archive</button>
+                <button id="${id}archive-button">Unarchive</button>
             </th>
             <th>
                 <button id="${id}delete-button">Delete</button>
@@ -48,14 +45,14 @@ function renderNotes(){
         for(let counter = 0; counter < localStorage.length; counter++){
             let noteKey = localStorage.key(counter)
             let noteData = JSON.parse(localStorage.getItem(noteKey))
-            if (!noteData.archived) {
+            if (noteData.archived) {
                 createNoteElement(noteData)
             }
         }
         for(let counter = 0; counter < localStorage.length; counter++){
             let noteKey = localStorage.key(counter)
             let noteData = JSON.parse(localStorage.getItem(noteKey))
-            if (!noteData.archived) {
+            if (noteData.archived) {
                 setArhciveFuction(noteKey)
                 setDeleteFunction(noteKey)
             }

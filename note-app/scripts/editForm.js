@@ -2,6 +2,7 @@ const nameInput = document.querySelector('#name')
 const editNoteForm = document.querySelector('#edit-note-form')
 const categorySelection = document.querySelector('#category')
 const textContentInput = document.querySelector('#text-content')
+const statusCheckbox = document.querySelector('#note-status')
 
 function getNoteData() {
     const urlSearchParams = new URLSearchParams(window.location.search);
@@ -9,6 +10,7 @@ function getNoteData() {
     let noteData = JSON.parse(localStorage.getItem(id))
         nameInput.value = noteData.name
         categorySelection.value = noteData.category
+        statusCheckbox.checked = noteData.completed
         textContentInput.value = noteData.text_content
 }
 getNoteData()
