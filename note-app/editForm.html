@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit note</h1>
+    <form id="edit-note-form" action="./index.html">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="category">Category</label>
+        <select id="category" name="category">
+            <option value="Task">Task</option>
+            <option value="Random Thought">Random Thought</option>
+            <option value="Idea">Idea</option>
+        </select>
+        <label for="text-content"></label>
+        <textarea name="text_content" id="text-content" required></textarea>
+        <label for="note-status">Completed</label>
+        <input id="note-status" type="checkbox" name="status">
+        <input type="submit" value="Edit note">
+    </form>
+    <script src="./scripts/editForm.js"></script>
+</body>
+</html>
