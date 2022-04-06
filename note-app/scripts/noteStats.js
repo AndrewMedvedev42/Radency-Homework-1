@@ -1,7 +1,7 @@
 const statsTable = document.querySelector('#stats-board')
 
 function getNotesStats(list, stats_list) {
-    const categories = list.map(item => item.category)
+    list.map(item => item.category)
         .filter((value, index, self) => self.indexOf(value) === index)
             .forEach(category=>{
                 let activeNotesCount = 0
@@ -16,10 +16,10 @@ function getNotesStats(list, stats_list) {
                         }
                     })
                 statsTable.innerHTML += `
-                <tr>
-                    <th>${category}</th>
-                    <th>${activeNotesCount}</th>
-                    <th>${archivedNotesCount}</th>
+                    <tr>
+                        <th>${category}</th>
+                        <th>${activeNotesCount}</th>
+                        <th>${archivedNotesCount}</th>
                     </tr>`
                 })
 }
@@ -34,7 +34,7 @@ function renderNotesStats(){
             let noteData = JSON.parse(localStorage.getItem(noteKey))
             noteDataList.push(noteData)
         }
-        getNotesStats(noteDataList,)
+        getNotesStats(noteDataList)
     }
 }
 

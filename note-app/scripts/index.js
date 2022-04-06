@@ -1,23 +1,6 @@
+import { setArhciveFuction, setDeleteFunction } from "./modules/index.js";
+
 const mainTable = document.querySelector('#main-board')
-const deleteButon = document.querySelector('#delete-button')
-
-function setArhciveFuction(id) {
-    const archiveButton = document.querySelector(`#${id}archive-button`)
-    let noteData = JSON.parse(localStorage.getItem(id))
-    archiveButton.onclick = function () {
-       noteData.archived = !noteData.archived
-       localStorage.setItem(id, JSON.stringify(noteData));
-       window.location.reload();
-    }
-}
-
-function setDeleteFunction(id){
-    const deleteButton = document.querySelector(`#${id}delete-button`)
-    deleteButton.onclick = function () {
-        localStorage.removeItem(id)
-        window.location.reload();
-    }
-};
 
 function createNoteElement({id, name, createdAt, category, text_content, datesMentioned, completed}) {
     mainTable.innerHTML += `
@@ -29,7 +12,7 @@ function createNoteElement({id, name, createdAt, category, text_content, datesMe
             <th>${datesMentioned.join(', ')}</th>
             <th>${completed ? "Completed" : "In progress"}</th>
             <th>
-                <a href="./editForm.html?id=${id}"><button>Edit</button></a>
+                <a href="editNotePage/editNotePage.html?id=${id}"><button>Edit</button></a>
             </th>
             <th>
                 <button id="${id}archive-button">Archive</button>

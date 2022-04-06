@@ -1,26 +1,9 @@
-const mainTable = document.querySelector('#main-board')
-const deleteButon = document.querySelector('#delete-button')
+import { setArhciveFuction, setDeleteFunction } from "../scripts/modules/index.js";
 
-function setArhciveFuction(id) {
-    const archiveButton = document.querySelector(`#${id}archive-button`)
-    let noteData = JSON.parse(localStorage.getItem(id))
-    archiveButton.onclick = function () {
-       noteData.archived = !noteData.archived
-       localStorage.setItem(id, JSON.stringify(noteData));
-       window.location.reload();
-    }
-}
-
-function setDeleteFunction(id){
-    const deleteButton = document.querySelector(`#${id}delete-button`)
-    deleteButton.onclick = function () {
-        localStorage.removeItem(id)
-        window.location.reload();
-    }
-};
+const archivedNotesBoard = document.querySelector('#archived-notes-board')
 
 function createNoteElement({id, name, createdAt, category, text_content, datesMentioned, completed}) {
-    mainTable.innerHTML += `
+    archivedNotesBoard.innerHTML += `
         <tr id="${id}">
             <th>${name}</th>
             <th>${createdAt}</th>

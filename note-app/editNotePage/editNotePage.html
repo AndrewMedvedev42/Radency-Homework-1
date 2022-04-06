@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/inputForm.css">
+    <link rel="stylesheet" href="../styles/inputForm.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Edit note</h1>
-    <form id="edit-note-form" action="./index.html">
+    <form id="edit-note-form" action="../index.html">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
+        <input type="text" name="name" id="name" placeholder="Name" required>
         <label for="category">Category</label>
         <select id="category" name="category">
             <option value="Task">Task</option>
@@ -19,11 +19,11 @@
             <option value="Idea">Idea</option>
         </select>
         <label for="text-content"></label>
-        <textarea name="text_content" id="text-content" required></textarea>
+        <textarea name="text_content" id="text-content" placeholder="Text" required></textarea>
         <label for="note-status">Completed</label>
         <input id="note-status" type="checkbox" name="status">
         <input type="submit" value="Edit note">
     </form>
-    <script src="./scripts/editForm.js"></script>
+    <script type="module" src="./editNote.js"></script>
 </body>
 </html>
